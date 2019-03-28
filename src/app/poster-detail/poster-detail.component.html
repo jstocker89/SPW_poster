@@ -1,7 +1,11 @@
 <div class="pdf-class" *ngIf="presentation">
   
   <pdf-viewer src="../assets/pdf/{{presentation.path}}.pdf"
-  [original-size]="false">
+  [original-size] = "true"
+  [fit-to-page]="true"
+  [render-text]="false"
+  [zoom]="pdfZoom"
+  >
   </pdf-viewer>
   
 </div>
@@ -12,5 +16,8 @@
   <button mat-raised-button class="zoom-out" (click)="goBack()">-</button>
   <button mat-raised-button class="reset" (click)="goBack()">Reset Zoom</button>
 </mat-toolbar> -->
-  
-<button mat-raised-button class="menu-class" (click)="goBack()">Return to Table</button>
+<mat-toolbar class="menu-class" > 
+  <button mat-raised-button (click)="goBack()">Return to Table</button>
+  <button mat-raised-button (click)="zoom_in">+</button>
+  <button mat-raised-button (click)="zoom_out">-</button>
+</mat-toolbar>

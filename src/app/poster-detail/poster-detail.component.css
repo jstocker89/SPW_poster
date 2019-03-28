@@ -1,5 +1,7 @@
+
 .pdf-class pdf-viewer{
-    width: 100%;
+    display:inline-block;
+    max-width:100%;
 }
 .menu-class{
     display: flex;
