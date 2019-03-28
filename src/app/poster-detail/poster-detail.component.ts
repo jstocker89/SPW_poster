@@ -24,5 +24,8 @@ export class PosterDetailComponent implements OnInit {
   getPoster(): void{
     const path = this.route.snapshot.paramMap.get('path');
     this.presentation = this.posterService.getPoster(path);
-    }
+  }
+  goBack(): void {
+    this.location.back();
+  }
 }

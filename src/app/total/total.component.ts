@@ -30,7 +30,7 @@ export class TotalComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   ngOnInit() {
     this.dataSource.sort = this.sort;
-    document.body.style.zoom= 
+    document.body.style.zoom="100%";
   }
 
   applyFilter(filterValue: string) {
@@ -39,6 +39,7 @@ export class TotalComponent implements OnInit {
   onClickMe(presentation: Presentation) {
     this.selectedPresentation = presentation;
   }
+  
 }
 
 // export interface Presentation {

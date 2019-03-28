@@ -60,5 +60,6 @@ img {
   border-radius: 8px;
   height: 450px;
   width: auto;
+  border: 3px solid black;
 
 }

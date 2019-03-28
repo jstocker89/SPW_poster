@@ -1,9 +1,10 @@
-<div *ngIf="presentation">
-  <div>
-    <a routerLink="/table">
-      <button mat-flat-button>Return to Table</button>
-    </a><h2>{{presentation.title}} by {{presentation.author}}</h2>
-    <pdf-viewer src="../assets/pdf/{{presentation.path}}.pdf"></pdf-viewer>
-  </div>
+<div class="pdf-class" *ngIf="presentation">
   
+  <pdf-viewer src="../assets/pdf/{{presentation.path}}.pdf"
+  [original-size]="false"
+  [fit-to-page]="true"
+  [autoresize]="true"
+  style="display: block;">
+  </pdf-viewer>
+  <button mat-flat-button (click)="goBack()">Return to Table</button>
 </div>
