@@ -1,3 +1,6 @@
+.zoom {
+  zoom: 100%;
+}
 .title-header {
     font-size: 70 px;
     font: bold;
@@ -42,8 +45,20 @@ button {
     height: 50px;
     width: 200px;
     font-size: 26px;
-    margin-left: 25px;
+    margin: 0;
+    position: absolute;
+    left:75%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin-top: 200px;
 }
 input {
     font-size: 26px;
+}
+
+img {
+  border-radius: 8px;
+  height: 450px;
+  width: auto;
+
 }

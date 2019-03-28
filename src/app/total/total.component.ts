@@ -1,6 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort, MatTableDataSource} from '@angular/material';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Presentation} from '../presentation';
+import {PosterService} from '../poster.service';
+import { DOCUMENT } from '@angular/common';
 
 /**
  * @title Table with expandable rows
@@ -18,44 +21,31 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   ],
 })
 export class TotalComponent implements OnInit {
-  dataSource = new MatTableDataSource(POSTER_DATA);
-  columnsToDisplay = ['title', 'author', 'org'];
+  
+  dataSource = new MatTableDataSource(this.posterService.getPosters());
+  columnsToDisplay = ['title', 'author', 'org', 'session'];
   expandedElement: Presentation | null;
-  constructor() { }
+  selectedPresentation: Presentation;
+  constructor(private posterService: PosterService) { }
   @ViewChild(MatSort) sort: MatSort;
   ngOnInit() {
     this.dataSource.sort = this.sort;
+    document.body.style.zoom= 
   }
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+  onClickMe(presentation: Presentation) {
+    this.selectedPresentation = presentation;
+  }
 }
 
-export interface Presentation {
-  author: string;
-  title: string;
-  org: string;
-  path: string;
-}
+// export interface Presentation {
+//   author: string;
+//   title: string;
+//   org: string;
+//   session: string;
+//   path: string;
+// }
 
-const POSTER_DATA: Presentation[] = [
-  {
-    author: 'Naut, Astro',
-    title: 'Space and Power Fun',
-    org: 'NASA',
-    path: 'space_power_fun',
-  }, 
-  {
-    author: 'Stocker, Justin',
-    title: 'Battery Testing',
-    org: 'Aerospace',
-    path: 'battery_testing',
-  }, 
-  {
-    author: 'MacDougall, Kevin',
-    title: 'Battery Explosions',
-    org: 'BEL',
-    path: 'battery_explosions',
-  }, 
-];
