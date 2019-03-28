@@ -10,6 +10,8 @@ import { TotalComponent } from './total/total.component';
 import { PosterDetailComponent } from './poster-detail/poster-detail.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AppRoutingModule } from './app-routing.module';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { AppRoutingModule } from './app-routing.module';
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatButtonModule,
+    MatToolbarModule,
     PdfViewerModule,
     AppRoutingModule
   ],

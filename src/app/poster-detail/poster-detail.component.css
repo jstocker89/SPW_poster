@@ -1,12 +1,31 @@
-
-button {
-    font-size: 30px;
-    height: 50px;
+.pdf-class pdf-viewer{
+    width: 100%;
+}
+.menu-class{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+}
+.menu-class button{
+    height: 45px;
+}
+.zoom-in{
+    margin-left: 300px;
+    width: 45px;
+    font-size: 40px;
 }
 
-.pdf-class {
-    /* position: absolute; */
-    /* width: 1080px; */
-    /* margin-top: -50px; */
-    /* width: 100%; */
+.zoom-out{
+    margin-left: 30px;
+    width: 45px;
+    font-size: 40px;
+}
+
+.reset{
+    margin-left: 30px;
+    font-size: 20px;
 }

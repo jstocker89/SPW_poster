@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort, MatTableDataSource} from '@angular/material';
+import {MatButtonModule} from '@angular/material/button';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Presentation} from '../presentation';
 import {PosterService} from '../poster.service';
