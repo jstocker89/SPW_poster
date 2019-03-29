@@ -13,7 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -31,8 +30,7 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     MatToolbarModule,
     MatSidenavModule,
     PdfViewerModule,
-    AppRoutingModule,
-    NgxExtendedPdfViewerModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
