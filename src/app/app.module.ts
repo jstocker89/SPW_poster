@@ -13,6 +13,15 @@ import { AppRoutingModule } from './app-routing.module';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+
+export class MyHammerConfig extends HammerGestureConfig  {
+  overrides = <any>{
+      'pinch': {threshold: 0} // override default settings
+  }
+}
+
 
 @NgModule({
   declarations: [
@@ -29,10 +38,14 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatButtonModule,
     MatToolbarModule,
     MatSidenavModule,
+    MatIconModule,
     PdfViewerModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{ 
+    provide: HAMMER_GESTURE_CONFIG, 
+    useClass: MyHammerConfig 
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

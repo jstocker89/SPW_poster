@@ -1,11 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Presentation } from '../presentation';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import {PosterService} from '../poster.service';
+import * as Hammer from 'hammerjs';
 
-const ZOOM_STEP:number = 0.1;
-const DEFAULT_ZOOM:number = 0.75;
+
+const ZOOM_STEP:number = 0.;
+const DEFAULT_ZOOM:number = 0.5;
+var myElement = document.body;
+var hammertime = new Hammer(myElement, {
+  touchAction: "auto",
+});
+hammertime.get('pinch').set({ enable: true });
 
 @Component({
   selector: 'app-poster-detail',
@@ -14,8 +21,8 @@ const DEFAULT_ZOOM:number = 0.75;
 })
 export class PosterDetailComponent implements OnInit {
   @Input() presentation: Presentation;
-
-  public pdfZoom:number = DEFAULT_ZOOM;
+ 
+  pdfZoom:number = DEFAULT_ZOOM;
   constructor(
     private route: ActivatedRoute,
     private posterService: PosterService,
@@ -32,16 +39,16 @@ export class PosterDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-  zoom_to: number;
-  zoom_in() {
+  
+  zoom_in(step: number) {
     if(this.pdfZoom < 2){
-      this.pdfZoom += ZOOM_STEP;
+      this.pdfZoom += step;
     }
     
   }
-  zoom_out() {
+  zoom_out(step: number) {
     if (this.pdfZoom > 0.25){
-      this.pdfZoom -= ZOOM_STEP;
+      this.pdfZoom -= step;
     }
     
   }
