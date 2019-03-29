@@ -4,8 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import {PosterService} from '../poster.service';
 
-const ZOOM_STEP:number = 0.25;
-const DEFAULT_ZOOM:number = 1;
+const ZOOM_STEP:number = 0.1;
+const DEFAULT_ZOOM:number = 0.75;
 
 @Component({
   selector: 'app-poster-detail',
@@ -24,7 +24,6 @@ export class PosterDetailComponent implements OnInit {
     
   ngOnInit() {
     this.getPoster();
-    this.zoom_to = 0.5;
   }
   getPoster(): void{
     const path = this.route.snapshot.paramMap.get('path');
@@ -35,9 +34,18 @@ export class PosterDetailComponent implements OnInit {
   }
   zoom_to: number;
   zoom_in() {
-    this.pdfZoom += ZOOM_STEP;
+    if(this.pdfZoom < 2){
+      this.pdfZoom += ZOOM_STEP;
+    }
+    
   }
   zoom_out() {
-    this.pdfZoom -= ZOOM_STEP;
+    if (this.pdfZoom > 0.25){
+      this.pdfZoom -= ZOOM_STEP;
+    }
+    
+  }
+  reset_zoom() {
+    this.pdfZoom = DEFAULT_ZOOM;
   }
 }

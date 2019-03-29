@@ -5,19 +5,21 @@
   [fit-to-page]="true"
   [render-text]="false"
   [zoom]="pdfZoom"
+  [autoresize]="true"
   >
   </pdf-viewer>
-  
+  <h3>{{pdfZoom}}</h3>
 </div>
 
-<!-- <mat-toolbar class="menu-class">
+<mat-toolbar class="menu-class">
   <button mat-raised-button (click)="goBack()">Return to Table</button>
-  <button mat-raised-button class="zoom-in" (click)="goBack()">+</button>
-  <button mat-raised-button class="zoom-out" (click)="goBack()">-</button>
-  <button mat-raised-button class="reset" (click)="goBack()">Reset Zoom</button>
-</mat-toolbar> -->
-<mat-toolbar class="menu-class" > 
-  <button mat-raised-button (click)="goBack()">Return to Table</button>
-  <button mat-raised-button (click)="zoom_in">+</button>
-  <button mat-raised-button (click)="zoom_out">-</button>
+  <button mat-raised-button class="zoom-in" (click)="zoom_in()">+</button>
+  <button mat-raised-button class="zoom-out" (click)="zoom_out()">-</button>
+  <button mat-raised-button class="reset" (click)="reset_zoom()">Reset Zoom</button>
 </mat-toolbar>
+<!-- <mat-toolbar class="menu-class" > 
+  <button mat-raised-button (click)="goBack()">Return to Table</button>
+  <button mat-raised-button (click)="zoom_in()">+</button>
+  <button mat-raised-button (click)="zoom_out()">-</button>
+</mat-toolbar> -->
+
