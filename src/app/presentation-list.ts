@@ -16,6 +16,13 @@ export const POSTER_DATA: Presentation[] = [
       path: 'Walker_solarPy',
     },
     {
+      author: 'Colin Mann',
+      title: 'Intelligent Solar Cell Carrier for Solar Cell Calibration Standards',
+      org: 'Aerospace',
+      session: 'Poster',
+      path: 'Mann_Solar_Cell_Carrier',
+    }, 
+    {
       author: 'D.R. Needell,  H. Bauser, M. Phelan, C.R. Bukowsky, O. Ilic, M. Kelzenberg, H. Atwater',
       title: 'Luminescent Solar Concentrators for Space PV',
       org: 'Caltech',

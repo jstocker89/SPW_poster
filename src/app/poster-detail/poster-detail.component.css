@@ -28,5 +28,14 @@
 
 .reset{
     margin-left: 30px;
-    font-size: 20px;
+}
+.hide{
+    margin-left: 300px;
+}
+.hidden-button{
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
 }

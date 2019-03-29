@@ -9,15 +9,12 @@
   </pdf-viewer>
 </div>
 
-<mat-toolbar class="menu-class">
+<mat-toolbar class="menu-class" *ngIf="this.showMenu">
   <button mat-raised-button (click)="goBack()">Return to Table</button>
   <button mat-raised-button class="zoom-in" (click)="zoom_in(0.1)"><mat-icon>zoom_in</mat-icon></button>
   <button mat-raised-button class="zoom-out" (click)="zoom_out(0.1)"><mat-icon>zoom_out</mat-icon></button>
   <button mat-raised-button class="reset" (click)="reset_zoom()">Reset Zoom</button>
+  <button mat-raised-button class="hide" (click)="this.showMenu = false">Hide Menu</button>
 </mat-toolbar>
-<!-- <mat-toolbar class="menu-class" > 
-  <button mat-raised-button (click)="goBack()">Return to Table</button>
-  <button mat-raised-button (click)="zoom_in()">+</button>
-  <button mat-raised-button (click)="zoom_out()">-</button>
-</mat-toolbar> -->
 
+<button class="hidden-button" *ngIf="this.showMenu==false" mat-raised-button (click)="this.showMenu = true">Show Menu</button>

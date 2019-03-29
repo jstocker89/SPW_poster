@@ -6,7 +6,6 @@ import {PosterService} from '../poster.service';
 import * as Hammer from 'hammerjs';
 
 
-const ZOOM_STEP:number = 0.;
 const DEFAULT_ZOOM:number = 0.5;
 var myElement = document.body;
 var hammertime = new Hammer(myElement, {
@@ -21,7 +20,7 @@ hammertime.get('pinch').set({ enable: true });
 })
 export class PosterDetailComponent implements OnInit {
   @Input() presentation: Presentation;
- 
+  showMenu: boolean;
   pdfZoom:number = DEFAULT_ZOOM;
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +30,7 @@ export class PosterDetailComponent implements OnInit {
     
   ngOnInit() {
     this.getPoster();
+    this.showMenu = true;
   }
   getPoster(): void{
     const path = this.route.snapshot.paramMap.get('path');
@@ -41,7 +41,7 @@ export class PosterDetailComponent implements OnInit {
   }
   
   zoom_in(step: number) {
-    if(this.pdfZoom < 2){
+    if(this.pdfZoom < 3){
       this.pdfZoom += step;
     }
     
@@ -54,5 +54,8 @@ export class PosterDetailComponent implements OnInit {
   }
   reset_zoom() {
     this.pdfZoom = DEFAULT_ZOOM;
+  }
+  hide_menu(){
+
   }
 }
