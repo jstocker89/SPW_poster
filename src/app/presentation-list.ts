@@ -9,6 +9,13 @@ export const POSTER_DATA: Presentation[] = [
       path: 'Nocerino_Radiometric_Spatial_Non-Uniformity',
     }, 
     {
+      author: 'Don Walker',
+      title: 'solarPy: A Python Library and GUI for Solar Cell Radiation Degradation Modeling',
+      org: 'Aerospace',
+      session: 'Poster',
+      path: 'Walker_solarPy',
+    },
+    {
       author: 'D.R. Needell,  H. Bauser, M. Phelan, C.R. Bukowsky, O. Ilic, M. Kelzenberg, H. Atwater',
       title: 'Luminescent Solar Concentrators for Space PV',
       org: 'Caltech',
@@ -35,6 +42,13 @@ export const POSTER_DATA: Presentation[] = [
       org: ' Rochester Institute of Technology',
       session: 'Poster',
       path: 'Ganter_Prototyping_RIT',
+    },
+    {
+      author: 'Medjoubi, Cariou, Vauche, Veinberg-Vidal, Lefèvre, Voarino, Mur, Fusalba, Boizot',
+      title: 'III-V/SI Mulit-Junction Potential for Space',
+      org: 'Liten CEA',
+      session: 'Poster',
+      path: 'Medjoubi_Multi-Junction',
     }, 
   ];
   
