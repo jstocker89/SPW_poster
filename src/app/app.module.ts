@@ -15,6 +15,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { MatSortModule } from '@angular/material';
 
 export class MyHammerConfig extends HammerGestureConfig  {
   overrides = <any>{
@@ -35,6 +36,7 @@ export class MyHammerConfig extends HammerGestureConfig  {
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatSortModule,
     MatButtonModule,
     MatToolbarModule,
     MatSidenavModule,

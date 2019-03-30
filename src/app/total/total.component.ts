@@ -1,14 +1,10 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort, MatTableDataSource} from '@angular/material';
-import {MatButtonModule} from '@angular/material/button';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Presentation} from '../presentation';
 import {PosterService} from '../poster.service';
-import { DOCUMENT } from '@angular/common';
 
-/**
- * @title Table with expandable rows
- */
+
 @Component({
   selector: 'app-total',
   templateUrl: './total.component.html',
@@ -42,12 +38,4 @@ export class TotalComponent implements OnInit {
   }
   
 }
-
-// export interface Presentation {
-//   author: string;
-//   title: string;
-//   org: string;
-//   session: string;
-//   path: string;
-// }
 

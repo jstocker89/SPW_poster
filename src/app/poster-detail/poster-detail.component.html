@@ -1,20 +1,23 @@
-<div class="pdf-class" *ngIf="presentation" >
+<div class="pdf-class" *ngIf="presentation" 
+(pinchout)=zoom_in(PINCH_ZOOM) 
+(pinchin)=zoom_out(PINCH_ZOOM)>
   
   <pdf-viewer src="../assets/pdf/{{presentation.path}}.pdf"
   [original-size] = "true"
   [render-text]="false"
-  [zoom]="pdfZoom"
-  (pinchout)=zoom_in(0.025) 
-  (pinchin)=zoom_out(0.025)>
+  [zoom]="pdfZoom">
   </pdf-viewer>
 </div>
 
-<mat-toolbar class="menu-class" *ngIf="this.showMenu">
-  <button mat-raised-button (click)="goBack()">Return to Table</button>
-  <button mat-raised-button class="zoom-in" (click)="zoom_in(0.1)"><mat-icon>zoom_in</mat-icon></button>
-  <button mat-raised-button class="zoom-out" (click)="zoom_out(0.1)"><mat-icon>zoom_out</mat-icon></button>
-  <button mat-raised-button class="reset" (click)="reset_zoom()">Reset Zoom</button>
-  <button mat-raised-button class="hide" (click)="this.showMenu = false">Hide Menu</button>
+<mat-toolbar [@buttonHide]="this.showMenu ? 'show' : 'hide'"
+  class="menu-class" 
+  (pinchout)="zoom_in(PINCH_ZOOM)" 
+  (pinchin)="zoom_out(PINCH_ZOOM)">
+  <button mat-raised-button [@buttonHide]="this.showMenu ? 'show' : 'hide'" (click)="goBack()">Return to Table</button>
+  <button mat-raised-button [@buttonHide]="this.showMenu ? 'show' : 'hide'" class="zoom-in" (click)="zoom_in(BUTTON_ZOOM)"><mat-icon>zoom_in</mat-icon></button>
+  <button mat-raised-button [@buttonHide]="this.showMenu ? 'show' : 'hide'" class="zoom-out" (click)="zoom_out(BUTTON_ZOOM)"><mat-icon>zoom_out</mat-icon></button>
+  <button mat-raised-button [@buttonHide]="this.showMenu ? 'show' : 'hide'" class="reset" (click)="reset_zoom()">Reset Zoom</button>
+  <button mat-raised-button [@buttonHide]="this.showMenu ? 'show' : 'hide'" class="hide" (click)="this.showMenu = hide">Hide Menu</button>
 </mat-toolbar>
 
-<button class="hidden-button" *ngIf="this.showMenu==false" mat-raised-button (click)="this.showMenu = true">Show Menu</button>
+<button class="hidden-button" [@menuHide]="this.showMenu ? 'hide' : 'show'" mat-raised-button (click)="showToggle()">Show Menu</button>

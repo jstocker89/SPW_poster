@@ -2,21 +2,21 @@ import { Presentation } from './presentation';
 
 export const POSTER_DATA: Presentation[] = [
     {
-      author: 'John Nocerino',
+      author: 'John Nocerino, Don Walker, Simon Liu',
       title: 'Radiometric Spatial Non-Uniformity of Solar Simulators',
       org: 'Aerospace',
       session: 'Poster',
       path: 'Nocerino_Radiometric_Spatial_Non-Uniformity',
     }, 
     {
-      author: 'Don Walker',
+      author: 'Don Walker, Misha Dowd, Simon Liu',
       title: 'solarPy: A Python Library and GUI for Solar Cell Radiation Degradation Modeling',
       org: 'Aerospace',
       session: 'Poster',
       path: 'Walker_solarPy',
     },
     {
-      author: 'Colin Mann',
+      author: 'Colin Mann, Don Walker, John Nocerino, Justin Lee, Simon Liu',
       title: 'Intelligent Solar Cell Carrier for Solar Cell Calibration Standards',
       org: 'Aerospace',
       session: 'Poster',
@@ -46,7 +46,7 @@ export const POSTER_DATA: Presentation[] = [
     {
       author: 'Matthew Ganter',
       title: 'Scaling of New Battery Technologies using the Battery Prototyping Center at RIT',
-      org: ' Rochester Institute of Technology',
+      org: 'Rochester Institute of Technology',
       session: 'Poster',
       path: 'Ganter_Prototyping_RIT',
     },
