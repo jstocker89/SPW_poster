@@ -1,11 +1,11 @@
 .zoom {
   zoom: 100%;
 }
-.title-header {
-    font-size: 150 px;
-    font: bold;
-    text-align: center;
-    color: indigo;
+.wtf {  
+  font-size: 50 px;
+  font: bold;
+  text-align: center;
+  color: indigo;
   }
 .filter-form{
   padding: 8px;

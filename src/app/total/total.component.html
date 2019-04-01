@@ -1,5 +1,4 @@
-
-<h1 class="title-header">SPW Digital Knowledge Portal</h1>
+<h1 class="wtf">SPW Digital Knowledge Portal</h1>
 <mat-form-field class="filter-form">
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
@@ -32,7 +31,7 @@
     <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
       <div class="example-element-detail"
             [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-            <img src="assets/img/{{element.path}}.jpg">
+            <a routerLink="/poster/{{element.path}}" (click)="onClickMe(element)"><img src="assets/img/{{element.path}}.jpg"></a>
             <!-- <a href="assets/pdf/{{element.path}}.pdf" target="_blank">
               <button mat-flat-button>Open Poster</button>
             </a> -->

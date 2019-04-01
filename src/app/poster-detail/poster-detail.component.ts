@@ -7,7 +7,7 @@ import {PosterService} from '../poster.service';
 import * as Hammer from 'hammerjs';
 
 
-const DEFAULT_ZOOM:number = 1.0;
+const DEFAULT_ZOOM:number = 0.40;
 var myElement = document.body;
 var hammertime = new Hammer(myElement, {
   touchAction: "auto",
@@ -39,7 +39,7 @@ hammertime.get('pinch').set({ enable: true });
 })
 export class PosterDetailComponent implements OnInit {
   @Input() presentation: Presentation;
-  PINCH_ZOOM: number = 0.025;
+  PINCH_ZOOM: number = 0.015;
   BUTTON_ZOOM: number = 0.1;
   showMenu: string;
   pdfZoom:number = DEFAULT_ZOOM;
