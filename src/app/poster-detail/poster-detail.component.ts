@@ -40,7 +40,7 @@ hammertime.get('pinch').set({ enable: true });
 export class PosterDetailComponent implements OnInit {
   @Input() presentation: Presentation;
   PINCH_ZOOM: number = 0.015;
-  BUTTON_ZOOM: number = 0.1;
+  BUTTON_ZOOM: number = 0.075;
   showMenu: string;
   pdfZoom:number = DEFAULT_ZOOM;
   constructor(

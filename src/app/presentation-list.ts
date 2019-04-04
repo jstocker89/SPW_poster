@@ -85,5 +85,12 @@ export const POSTER_DATA: Presentation[] = [
       session: 'Poster',
       path: 'Loke_Perovskites',
     },
+    {
+      author: 'Raymond Hoheisel',
+      title: 'Near Space Characterization of Space Solar Cells and Arrays',
+      org: 'Blacksky Aerospace, LLC',
+      session: 'Poster',
+      path: 'Hoheisel_Near_Space',
+    },
   ];
   
